@@ -1,0 +1,17 @@
+{
+  "name": "sketchsandbox",
+  "version": "1.0.0",
+  "description": "Desktop app that can run and tweak sketches",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^7.1.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Bean Flowers",
+  "license": "ISC"
+}
