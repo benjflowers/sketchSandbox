@@ -1,3 +1,9 @@
 h1 {
 	color: red;
 }
+
+.slidecontainer {
+	border: solid gray 1px;
+	width: 300px;
+	text-align: center;
+}

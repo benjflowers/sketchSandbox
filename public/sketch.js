@@ -10,20 +10,27 @@ let allParticles = []
 function setup() {
 	createCanvas(canvasHeight, canvasWidth)
 	canvas.style = "border: red solid 2px"
+
+	for(let i = 0; i < parseInt(slider.value); i++) {
+		allParticles.push(
+			new Particle(width/2, height/2, 1.5, rand(800, 1000), rand(0, 20))
+		)
+	}
 }
 
 function draw() {
 	background(255)
 	for(let i = 0; i < allParticles.length; i++){
 		particle = allParticles[i]
+
 		strokeWeight(particle.weight)
 		particle.update()
 
-		particle.x = mapNoise(noise(particle.xt), 0, width)
-		particle.y = mapNoise(noise(particle.yt), 0, height)
+		particle.x = mapNoise(particle.xt, 0, width)
+		particle.y = mapNoise(particle.yt, 0, height)
 
-		particle.xt += .003
-		particle.yt += .006
+		particle.xt += Math.random() * .01
+		particle.yt += Math.random() * .01
 	}
 
 	// update frame rate
@@ -42,12 +49,6 @@ const rand = (min, max) => {
 	return Math.floor(Math.random() * (max - min)) + min
 }
 
-for(let i = 0; i < parseInt(slider.value); i++) {
-	allParticles.push(
-		new Particle(0, 0, 1.5, rand(800, 1000), rand(0, 20))
-	)
-}
-
 slider.addEventListener('input', (e) => {
 	updateParticles(parseInt(e.target.value))
 })
@@ -55,7 +56,7 @@ slider.addEventListener('input', (e) => {
 const updateParticles = (count) => {
 	particles = Array(count)
 	for(let i = 0; i < particles.length; i++) {
-		particles[i] = new Particle(0, 0, 1.5, rand(800, 1000), rand(0, 80))
+		particles[i] = new Particle(canvasWidth/2, canvasHeight/2, 1.5, rand(800, 1000), rand(0, 80))
 	}
 	allParticles = particles
 }
