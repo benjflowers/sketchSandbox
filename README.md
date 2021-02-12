@@ -6,4 +6,4 @@ An early stage electron app displaying interactive sketches made with p5 js crea
 - `npm install`
 
 ## Running the application
-- `node start`
+- `npm start`
