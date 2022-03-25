@@ -4,7 +4,7 @@
   "description": "Desktop app that can run and tweak sketches",
   "main": "main.js",
   "dependencies": {
-    "electron": "^7.1.9"
+    "electron": "^13.6.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
